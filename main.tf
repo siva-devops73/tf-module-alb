@@ -42,7 +42,7 @@ resource "aws_lb" "main" {
   tags               = merge({ Name = "${var.name}-${var.env}" }, var.tags)
 }
 
-resource "aws_lb_listener" "main" {
+resource "aws_lb_listener" "http" {
   load_balancer_arn = aws_lb.main.arn
   port              = "80"
   protocol          = "HTTP"
